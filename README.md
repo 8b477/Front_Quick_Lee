@@ -20,12 +20,12 @@
  Rendre l'apprentissage des langues  aussi excitant que de résoudre un puzzle !
 <br><br>
 
->🤓Ajouter des mots dans différentes langues avec leurs définitions ou/et leurs traductions.<br>
+>🤓Ajouter des mots  avec leurs définitions ou/et leurs traductions.<br>
 🌟 Grâce à ses fonctionnalités ludiques, vous vous amuserez tout en apprenant!<br>
 📚 Que ce soit en découvrant de nouveaux mots,<br>
 🎲 en défiant votre mémoire avec des jeux, <br>
-🌈ou en suivant un parcours d'apprentissage personnalisé, cette application vous accompagnera <br>
-🛩️dans votre voyage linguistique avec enthousiasme!
+🌈 suivre un parcours d'apprentissage personnalisé, cette application vous accompagnera <br>
+🛩️ dans votre voyage linguistique avec enthousiasme!
 
 
 ---
