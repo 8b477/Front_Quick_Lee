@@ -4,15 +4,29 @@
     <img align="right" src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-master-right.svg" alt="karate-fighter-right" width="100">
     <h1 align="center">Quick Lee</h1>
     <h1 align="center">ǫuᴉʞ ɹǝǝԀ</h1>
-    <img src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-master-right.svg" alt="karate-fighter-right" width="100">
-    <img align="right" src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-fighter-left.svg" alt="karate-fighter-left" width="100">
+    <img src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-master-right-flip.svg" alt="karate-fighter-right" width="100">
+    <img align="right" src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-fighter-left-flip.svg" alt="karate-fighter-left" width="100">
 </div>
 
 <br><br>
 
 # 🎯 But de l'application
 
-Cette application a pour but de permettre à l'utilisateur d'ajouter des mots avec leur définition ou leur traduction, accompagnés de quelques fonctionnalités sympa pour aider à la mémorisation de ces derniers de manière rapide + ludique = très efficace! 😁
+🚀 Une application fun et facile à prendre en main! 🎉
+
+ Imaginez un monde où apprendre une nouvelle langue est aussi amusant que de jouer à votre jeu vidéo préféré!<br>
+ Cette application est là pour rendre cela possible! <br>
+ Son but?<br>
+ Rendre l'apprentissage des langues  aussi excitant que de résoudre un puzzle !
+<br><br>
+
+>🤓Avec cette application géniale, vous pouvez ajouter des mots dans différentes langues avec leurs définitions ou/et leurs traductions.<br>
+🌟 Grâce à ses fonctionnalités ludiques, vous vous amuserez tout en apprenant!<br>
+📚 Que ce soit en découvrant de nouveaux mots,<br>
+🎲 en défiant votre mémoire avec des jeux, <br>
+🌈ou en suivant un parcours d'apprentissage personnalisé, cette application vous accompagnera <br>
+🛩️dans votre voyage linguistique avec enthousiasme!
+
 
 ---
 
