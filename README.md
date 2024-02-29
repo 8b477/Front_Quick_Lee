@@ -20,7 +20,7 @@
  Rendre l'apprentissage des langues  aussi excitant que de résoudre un puzzle !
 <br><br>
 
->🤓Avec cette application géniale, vous pouvez ajouter des mots dans différentes langues avec leurs définitions ou/et leurs traductions.<br>
+>🤓Ajouter des mots dans différentes langues avec leurs définitions ou/et leurs traductions.<br>
 🌟 Grâce à ses fonctionnalités ludiques, vous vous amuserez tout en apprenant!<br>
 📚 Que ce soit en découvrant de nouveaux mots,<br>
 🎲 en défiant votre mémoire avec des jeux, <br>
