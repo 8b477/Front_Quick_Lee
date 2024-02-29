@@ -1,4 +1,14 @@
-# Quick Lee 
+
+<div style="display:flex;justify-content:center;align-items:center;">
+    <img src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-fighter-left.svg" alt="karate-fighter-left" width="100">
+    <img align="right" src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-master-right.svg" alt="karate-fighter-right" width="100">
+    <h1 align="center">Quick Lee</h1>
+    <h1 align="center">ǫuᴉʞ ɹǝǝԀ</h1>
+    <img src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-master-right.svg" alt="karate-fighter-right" width="100">
+    <img align="right" src="https://github.com/8b477/Front_Quick_Lee/blob/master/Quick_Lee/Assets/karate-fighter-left.svg" alt="karate-fighter-left" width="100">
+</div>
+
+<br><br>
 
 # 🎯 But de l'application
 
