@@ -1,7 +1,56 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
-<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h3>App</h3>
 
-Welcome to your new app.
+<input @oninput="@(iv => {WordToAdd = iv.Value as string ?? "";})"
+       type="text"
+       placeholder="ex : learning" />
+
+<input @oninput="@(iv => {WordDefinition = iv.Value as string ?? "";})"
+       type="text"
+       placeholder="ex : apprendre" />
+
+<button @onclick="AddToList">Ajouter</button>
+
+
+@if (WordsList.Count == 0)
+{
+    <h3>No content</h3>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Numéro</th>
+                <th scope="col">Mot</th>
+                <th scope="col">Définition</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in WordsList)
+            {
+                <tr>
+                    <th scope="row">@WordsList.IndexOf(@item)</th>
+                    <td>@item.WordToAdd</td>
+                    <td>@item.WordDefinition</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
+
+@* ---------- debug tools -------------*@
+
+<button @onclick="()=> Console.WriteLine(WordToAdd)">value input 1</button>
+<button @onclick="()=> Console.WriteLine(WordDefinition)">value input 2</button>
+<button @onclick="()=> Console.WriteLine(WordsList.Count)">nbr d'item dans la liste</button>
+
+@* ---------- debug tools -------------*@
+

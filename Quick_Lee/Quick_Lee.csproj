@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Components\Pages\Home.razor~RF543b492.TMP" />
+  </ItemGroup>
+
 </Project>
