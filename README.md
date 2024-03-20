@@ -33,11 +33,11 @@
 # 📝 ToDo List
 ## Tâches prioritaires :
 
-- [ ] **Ajouter des mots d'autres langues via le champ de saisie textuelle :**
+- ✅ **Ajouter des mots d'autres langues via le champ de saisie textuelle :**
    - Permet à l'utilisateur d'entrer des mots dans un champ de saisie.
    - Stocke les mots entrés pour les afficher ultérieurement.
 
-- [ ] **Afficher les mots ajoutés précédemment :**
+- ✅ **Afficher les mots ajoutés précédemment :**
    - Affiche chaque mot ajouté précédemment sur une ligne distincte.
 
 - [ ] **Ajouter un bouton à côté de chaque mot visible :**
