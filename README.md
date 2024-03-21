@@ -40,10 +40,10 @@
 - ✅ **Afficher les mots ajoutés précédemment :**
    - Affiche chaque mot ajouté précédemment sur une ligne distincte.
 
-- [ ] **Ajouter un bouton à côté de chaque mot visible :**
+- ✅ **Ajouter un bouton à côté de chaque mot visible :**
    - Place un bouton à côté de chaque mot affiché.
 
-- [ ] **Afficher la traduction du mot au clic du bouton :**
+- ✅ **Afficher la traduction du mot au clic du bouton :**
    - Au clic du bouton associé à un mot, affiche la traduction de ce mot.
 
 ## Tâches à réaliser en second temps :
