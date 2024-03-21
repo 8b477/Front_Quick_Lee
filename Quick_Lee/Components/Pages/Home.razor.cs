@@ -5,19 +5,39 @@ namespace Quick_Lee.Components.Pages
     public partial class Home
     {
 
-        readonly List<DicoWords> WordsList = [];
+        #region Variables
+        private string WordToAdd      = string.Empty;
+        private string WordDefinition = string.Empty;
+        private bool   IsVisible      = false;
 
-        string WordToAdd = string.Empty;
-        string WordDefinition = string.Empty;
+        private readonly List<DicoWords> WordsList = [];
+        #endregion
 
 
-        public void AddToList()
+
+        #region Public Methods
+
+        /// <summary>
+        /// Add a Object of type DicoWord into the Collection called WordList.
+        /// </summary>
+        private void AddToList()
         {
-            DicoWords wordDicoToAdd = new(this.WordToAdd, this.WordDefinition);
+            DicoWords wordDicoToAdd = new(this.WordToAdd, this.WordDefinition, false);
 
             WordsList.Add(wordDicoToAdd);
         }
- 
-       
+
+
+        /// <summary>
+        /// Invert the Boolean value of "IsVisible" to switch from "hide" to "show" or vice versa.
+        /// </summary>
+        private void ToggleVisibility(int index)
+        {
+            this.WordsList[index].IsVisible = !this.WordsList[index].IsVisible;
+        }
+
+        #endregion
+
+
     }
 }

@@ -30,12 +30,24 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in WordsList)
+            @foreach (var (item, index) in WordsList.Select((item, index) => (item, index)))
             {
                 <tr>
-                    <th scope="row">@WordsList.IndexOf(@item)</th>
+                    <th scope="row">@(index + 1)</th>
                     <td>@item.WordToAdd</td>
-                    <td>@item.WordDefinition</td>
+
+                    @if (@item.IsVisible)
+                    {
+                        <td>@item.WordDefinition</td>
+                    }
+                    else
+                    {
+                        <td class="invisible">@item.WordDefinition</td>
+                    }
+
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => ToggleVisibility(index)">Show</button>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -44,13 +56,14 @@ else
 
 
 
+<!-- #region Debug Tools -->
 
+@* 
+    <button @onclick="()=> Console.WriteLine(WordToAdd)">value input 1</button>
+    <button @onclick="()=> Console.WriteLine(WordDefinition)">value input 2</button>
+    <button @onclick="()=> Console.WriteLine(WordsList.Count)">nbr d'item dans la liste</button>
+*@
 
-@* ---------- debug tools -------------*@
+<!-- #endregion -->
 
-<button @onclick="()=> Console.WriteLine(WordToAdd)">value input 1</button>
-<button @onclick="()=> Console.WriteLine(WordDefinition)">value input 2</button>
-<button @onclick="()=> Console.WriteLine(WordsList.Count)">nbr d'item dans la liste</button>
-
-@* ---------- debug tools -------------*@
 
