@@ -54,9 +54,6 @@
 - [ ] **Ajouter un bouton pour changer la direction de la traduction 🔄:**
    - Ajoute un bouton pour changer la direction de la traduction (par exemple, FR => EN ou EN => FR).
 
-- [ ] **Ajouter un champ pour taper la traduction du mot ✍️:**
-   - Ajoute un champ pour que l'utilisateur puisse entrer la traduction du mot lui-même.
-
 - [ ] **Mélanger et tirer au sort quelques mots :🔀**
    - Sélectionne aléatoirement quelques mots ajoutés et les affiche à l'utilisateur.
 
