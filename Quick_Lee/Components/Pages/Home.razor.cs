@@ -1,9 +1,20 @@
-﻿using Quick_Lee.Components.Models;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
+
+using Quick_Lee.Components.Models;
 
 namespace Quick_Lee.Components.Pages
 {
     public partial class Home
     {
+        #region INJECTION
+
+        [Inject]
+        public IJSRuntime? JSRuntime { get; set; }
+
+        #endregion
+
+
 
         #region Variables
         private string WordToAdd      = string.Empty;
@@ -38,6 +49,21 @@ namespace Quick_Lee.Components.Pages
 
         #endregion
 
+
+        #region DEBG TOOLS
+        private async Task Debugger(string valueToCheck)
+        {
+            if(JSRuntime is not null)
+            {
+                if(string.IsNullOrEmpty(WordToAdd))
+                    await JSRuntime.InvokeVoidAsync("console.log", $"The value of parameter : \'{nameof(valueToCheck)}\' is null or empty");
+
+                await JSRuntime.InvokeVoidAsync("console.log", valueToCheck);
+            }
+            await Console.Out.WriteLineAsync("IJRuntime is not available");
+        }
+
+        #endregion
 
     }
 }
