@@ -48,7 +48,7 @@
 
 ## Tâches à réaliser en second temps :
 
-- [ ] **Ajouter un timer ⏱️:**
+- ✅ **Ajouter un timer ⏱️:**
    - Pendant la durée du timer, affiche tous les mots ajoutés.
 
 - [ ] **Ajouter un bouton pour changer la direction de la traduction 🔄:**
