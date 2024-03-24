@@ -15,7 +15,7 @@
 <button @onclick="AddToList">Ajouter</button>
 
 
-@if (MockupDictionary?.WordsList.Count == 0)
+@if (MockupDictionary?.WordsList?.Count == 0)
 {
     <h3>No content</h3>
 }
@@ -30,7 +30,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var (item, index) in MockupDictionary.WordsList.Select((item, index) => (item, index)))
+            @foreach (var (item, index) in MockupDictionary?.WordsList?.Select((item, index) => (item, index)) ?? throw new ArgumentNullException(nameof(MockupDictionary)))
             {
                 <tr>
                     <th scope="row">@(index + 1)</th>
@@ -55,4 +55,4 @@ else
     </table>
 }
 
-<Chronometer/>
+<Chronometer DicoList="MockupDictionary.WordsList" DicoListChanged="HandleDicoListChange" />

@@ -1,48 +1,83 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Quick_Lee.Components.FakeData;
+using Quick_Lee.Components.Models;
 using System.Timers;
+
 
 namespace Quick_Lee.Components.Pages
 {
     public partial class Chronometer
     {
 
-        [Inject]
-        public MockupDictionary MockupDictionary { get; set; }
-
-
+        #region VARIABLES
         private readonly System.Timers.Timer SetTimer = new();
-        private int TimerElapsed = 10;
+        private int TimerElapsed = 10; 
 
-        private void HandlerChronometer()
+        #endregion
+
+
+        #region PARAMETERS
+        [Parameter]
+        public List<DicoWords>? DicoList { get; set; }
+
+        [Parameter]
+        public EventCallback<List<DicoWords>> DicoListChanged { get; set; } 
+
+        #endregion
+
+
+        private async Task NotifyParentOfChange()
         {
-            foreach(var item in MockupDictionary.WordsList ?? throw new ArgumentNullException(nameof(MockupDictionary)))
-            {
-                item.IsVisible = true;
-            }
+            await InvokeAsync(() => DicoListChanged.InvokeAsync(DicoList));
+        }
+
+
+        private async void HandlerChronometer()
+        {
+            SetVisibilityOnTrue();
 
             SetTimer.Interval = 1000;
             SetTimer.Elapsed += OnTimeEvent;
             SetTimer.AutoReset = true;
             SetTimer.Enabled = true;
 
+            await NotifyParentOfChange();
         }
 
-        private void OnTimeEvent(object source, ElapsedEventArgs e)
+
+        private async void OnTimeEvent(object source, ElapsedEventArgs e)
         {
             if (this.TimerElapsed > 0)
             {
                 this.TimerElapsed -= 1;
-                InvokeAsync(() => StateHasChanged());
+                await InvokeAsync(() => StateHasChanged());
             }
 
             if(this.TimerElapsed == 0)
             {
-                foreach (var item in MockupDictionary.WordsList ?? throw new ArgumentNullException(nameof(MockupDictionary)))
-                {
-                    item.IsVisible = false;
-                }
+                SetVisibilityOnFalse();
+
+                await NotifyParentOfChange();
             }
         }
+
+
+        protected void SetVisibilityOnTrue()
+        {
+            foreach (var item in DicoList ?? throw new ArgumentNullException(nameof(DicoList)))
+            {
+                item.IsVisible = true;
+            }
+        }
+
+
+        protected void SetVisibilityOnFalse()
+        {
+            foreach (var item in DicoList ?? throw new ArgumentNullException(nameof(DicoList)))
+            {
+                item.IsVisible = false;
+            }
+        }
+
+
     }
 }

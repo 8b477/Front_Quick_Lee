@@ -9,16 +9,22 @@ namespace Quick_Lee.Components.Pages
     public partial class Home
     {
 
+        #region INJECTION
         [Inject]
         public IJSRuntime? JSRuntime { get; set; }
 
         [Inject]
         public MockupDictionary? MockupDictionary { get; set; }
 
+        #endregion
 
+
+        #region VARIABLES
         private string WordToAdd = string.Empty;
         private string WordDefinition = string.Empty;
-        private bool IsVisible = true;
+        private bool IsVisible = true; 
+
+        #endregion
 
 
         /// <summary>
@@ -28,7 +34,7 @@ namespace Quick_Lee.Components.Pages
         {
             DicoWords wordDicoToAdd = new(this.WordToAdd, this.WordDefinition, IsVisible);
 
-            MockupDictionary?.WordsList.Add(wordDicoToAdd);
+            MockupDictionary?.WordsList?.Add(wordDicoToAdd);
         }
 
         /// <summary>
@@ -37,7 +43,7 @@ namespace Quick_Lee.Components.Pages
         /// <param name="index">identificatory item to remove</param>
         private void DeleteItemFromDicoList(int index)
         {
-            MockupDictionary?.WordsList.Remove(MockupDictionary.WordsList[index]);
+            MockupDictionary?.WordsList?.Remove(MockupDictionary.WordsList[index]);
         }
 
 
@@ -49,15 +55,20 @@ namespace Quick_Lee.Components.Pages
             if (MockupDictionary is null) 
                 throw new ArgumentNullException(nameof(MockupDictionary));
 
-            MockupDictionary.WordsList[index].IsVisible = !MockupDictionary.WordsList[index].IsVisible;
+            if(MockupDictionary.WordsList?.Count > 0)
+                MockupDictionary.WordsList[index].IsVisible = !MockupDictionary.WordsList[index].IsVisible;
         }
 
 
-
-        public void HandleDataUpdated()
+        private Task HandleDicoListChange(List<DicoWords> newList)
         {
-            StateHasChanged();
+            InvokeAsync(()=>StateHasChanged()); // Par exemple, force une mise à jour du composant parent
+            return Task.CompletedTask;
         }
+
+
+
+
 
         #region DEBG TOOLS
 
@@ -73,6 +84,18 @@ namespace Quick_Lee.Components.Pages
             await Console.Out.WriteLineAsync("IJRuntime is not available");
         }
 
+
+        private async Task Debugger(List<DicoWords> valueToCheck)
+        {
+            if (JSRuntime is not null)
+            {
+                foreach(var item in valueToCheck)
+                {
+                    await JSRuntime.InvokeVoidAsync("console.log", item.IsVisible);
+                }
+            }
+            await Console.Out.WriteLineAsync("IJRuntime is not available");
+        }
         #endregion
 
     }
