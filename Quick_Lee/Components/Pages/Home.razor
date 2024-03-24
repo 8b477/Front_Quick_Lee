@@ -15,7 +15,7 @@
 <button @onclick="AddToList">Ajouter</button>
 
 
-@if (WordsList.Count == 0)
+@if (MockupDictionary?.WordsList.Count == 0)
 {
     <h3>No content</h3>
 }
@@ -30,7 +30,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var (item, index) in WordsList.Select((item, index) => (item, index)))
+            @foreach (var (item, index) in MockupDictionary.WordsList.Select((item, index) => (item, index)))
             {
                 <tr>
                     <th scope="row">@(index + 1)</th>
@@ -46,7 +46,8 @@ else
                     }
 
                     <td>
-                        <button class="btn btn-primary" @onclick="() => ToggleVisibility(index)">Show</button>
+                        <button class="btn btn-primary" @onclick="() => ToggleVisibility(index)">Show/Hide</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteItemFromDicoList(index)">Delete</button>
                     </td>
                 </tr>
             }
@@ -54,6 +55,4 @@ else
     </table>
 }
 
-
-<button @onclick="() => Debugger(WordToAdd)">Debug item</button>
-
+<Chronometer/>

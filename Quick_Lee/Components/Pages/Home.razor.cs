@@ -1,41 +1,43 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-
+using Quick_Lee.Components.FakeData;
 using Quick_Lee.Components.Models;
+
 
 namespace Quick_Lee.Components.Pages
 {
     public partial class Home
     {
-        #region INJECTION
 
         [Inject]
         public IJSRuntime? JSRuntime { get; set; }
 
-        #endregion
+        [Inject]
+        public MockupDictionary? MockupDictionary { get; set; }
 
 
-
-        #region Variables
-        private string WordToAdd      = string.Empty;
+        private string WordToAdd = string.Empty;
         private string WordDefinition = string.Empty;
-        private bool   IsVisible      = false;
+        private bool IsVisible = true;
 
-        private readonly List<DicoWords> WordsList = [];
-        #endregion
-
-
-
-        #region Public Methods
 
         /// <summary>
         /// Add a Object of type DicoWord into the Collection called WordList.
         /// </summary>
         private void AddToList()
         {
-            DicoWords wordDicoToAdd = new(this.WordToAdd, this.WordDefinition, false);
+            DicoWords wordDicoToAdd = new(this.WordToAdd, this.WordDefinition, IsVisible);
 
-            WordsList.Add(wordDicoToAdd);
+            MockupDictionary?.WordsList.Add(wordDicoToAdd);
+        }
+
+        /// <summary>
+        /// Remove item of type DicoWord from the Collection called WordList.
+        /// </summary>
+        /// <param name="index">identificatory item to remove</param>
+        private void DeleteItemFromDicoList(int index)
+        {
+            MockupDictionary?.WordsList.Remove(MockupDictionary.WordsList[index]);
         }
 
 
@@ -44,13 +46,21 @@ namespace Quick_Lee.Components.Pages
         /// </summary>
         private void ToggleVisibility(int index)
         {
-            this.WordsList[index].IsVisible = !this.WordsList[index].IsVisible;
+            if (MockupDictionary is null) 
+                throw new ArgumentNullException(nameof(MockupDictionary));
+
+            MockupDictionary.WordsList[index].IsVisible = !MockupDictionary.WordsList[index].IsVisible;
         }
 
-        #endregion
 
+
+        public void HandleDataUpdated()
+        {
+            StateHasChanged();
+        }
 
         #region DEBG TOOLS
+
         private async Task Debugger(string valueToCheck)
         {
             if(JSRuntime is not null)
